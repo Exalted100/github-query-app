@@ -70,7 +70,8 @@ const token = "/.netlify/functions/findToken"
 const getToken = async () => {
     const res = await fetch(token)
     console.log(res)
-    console.log(await res.text())
+    const result = await res.text()
+    console.log(result)
 }
 
 const submitButton = document.querySelector("#submit-button")
