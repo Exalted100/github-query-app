@@ -1,5 +1,13 @@
 document.querySelector(".main-menu-navigation-mobile").style.display = "none"
 
+const changeInputDisplay = () => {
+    document.querySelector(".input-li-item").style.backgroundColor = "white"
+}
+
+const changeMobileInputDisplay = () => {
+    document.querySelector(".input-li-item-mobile").style.backgroundColor = "white"
+}
+
 document.querySelector(`.profile-image-small`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
 document.querySelector(`.profile-image-small-phone`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
 document.querySelector(`.profile-image-main`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
@@ -13,6 +21,8 @@ document.querySelector(`.user-login-mobile`).innerHTML = JSON.parse(window.local
 document.querySelector(`.user-bio-mobile`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.bio
 document.querySelector(`.number-of-repos`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.repositories.nodes.length
 document.querySelector(".number-of-repositories").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.repositories.nodes.length
+document.querySelector(".main-search").addEventListener("focus", changeInputDisplay)
+document.querySelector(".main-search-mobile").addEventListener("focus", changeMobileInputDisplay)
 
 const toggle = () => {
     document.querySelector(".main-menu-navigation-mobile").style.display = document.querySelector(".main-menu-navigation-mobile").style.display == "none" ? "block" : "none"
