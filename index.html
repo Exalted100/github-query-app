@@ -4,16 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An app to get user data from github users and display the data">
+
+    <meta name="description" content="An app to get user data of github users and display the data gotten.">
     <meta name="keywords" content="github API v4, graphql api request">
     <meta name="author" content="Fawaz Haroun">
     <meta property="og:title" content="Github Query App">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Github Query App">
-    <!--<meta property="og:url" content="">-->
+    <meta property="og:url" content="https://github-query-app.netlify.app/">
     <meta property="og:image" content="/github-fill.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
     <meta property="og:locale" content="en_US">
-    <link rel="shortcut icon" type="image/x-icon" href="/github-fill-2.png" />
+
+    <meta property="twitter:site" content="github query app">
+    <meta property="twitter:creator" content="exalted100">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="GitHub Query App">
+    <meta property="twitter:description" content="An app to get user data of github users and display the data gotten.">
+    <meta property="twitter:image:src" content="/github-fill.png">
+    <meta property="twitter:image:width" content="1200">
+    <meta property="twitter:image:height" content="1200">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/github-fill.png" />
     <link rel="stylesheet" href="/index.css">
     <title>Github Query App</title>
 </head>
@@ -22,12 +36,12 @@
 
     <div class="error-message-container">
         <p class="error-message">Incorrect username.</p>
-        <p class="close-message">x</p>
+        <p class="close-message" aria-roledescription="button to remove error message" tabindex="0">x</p>
     </div>
     <form action="">
-        <label for="username" class="username-label">Github username <span>*</span></label>
+        <label for="username" class="username-label">Github username <span aria-hidden="true">*</span></label>
         <br>
-        <input type="text" name="username" id="username" title="username" required aria-required="true">
+        <input type="text" name="username" id="username" title="username" aria-required="true">
         <br>
         <input id="submit-button" type="button" value="Get data" title="get data" aria-label="click to submit">
     </form>

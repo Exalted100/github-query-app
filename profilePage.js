@@ -61,14 +61,6 @@ const repositoryListRender = (item) => {
         </li>`
 
     document.querySelector(".repository-list-container").innerHTML += repositoryListItem
-    //document.querySelector(`.${item.url}`).style.backgroundColor = item.primaryLanguage ? item.primaryLanguage.color : ""
-    //console.log(item.url)
-    //console.log(item)
 }
 
 repositoryList.forEach(repositoryListRender)
-
-//Make profile link shareable
-//refactor code
-//Accessibility
-//Add more meta tags

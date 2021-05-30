@@ -1,6 +1,7 @@
 const usernameInputField = document.querySelector("#username")
 const submitButton = document.querySelector("#submit-button")
 const form = document.querySelector("form")
+const closeMessage = document.querySelector(".close-message")
 
 let user;
 
@@ -10,10 +11,10 @@ const getUserData = async () => {
     try {
         const token = await fetch(tokenUrl)
         const parsedToken = await token.text()
-        const res = await fetch('https://api.github.com/graphql', {
-            method: 'POST',
+        const res = await fetch("https://api.github.com/graphql", {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
               "Authorization": `bearer ${parsedToken}`
             },
             body: JSON.stringify({
@@ -44,23 +45,32 @@ const getUserData = async () => {
             })
           })
           const result = await res.json()
-          window.localStorage.setItem('userData', JSON.stringify(result))
+          window.localStorage.setItem("userData", JSON.stringify(result))
           JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
     } catch(err) {
         console.log(err)
     }
-    }
+}
 
+//Form Submission Handlers
 const formSubmission = (event) => {
     event.preventDefault()
     getUserData()
 }
 
+form.addEventListener("submit", formSubmission)
+submitButton.addEventListener("click", getUserData)
+
+//Error message close button handlers
 const removeErrorMessage = () => {
     document.querySelector(".error-message-container").style.display = "none"
 }
 
-//Form Submission Handlers
-form.addEventListener("submit", formSubmission)
-submitButton.addEventListener("click", getUserData)
-document.querySelector(".close-message").addEventListener("click", removeErrorMessage)
+const removeErrorMessageWithKey = (event) => {
+    if (event.keyCode === 13) {
+        removeErrorMessage()
+    }
+}
+
+closeMessage.addEventListener("click", removeErrorMessage)
+closeMessage.addEventListener("keyup", removeErrorMessageWithKey)
