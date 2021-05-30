@@ -454,6 +454,7 @@ li {
     justify-content: space-between;
     padding: 0.1rem 0.3rem;
     border-radius: 5px;
+    margin: 1rem 0;
   }
 
   .input-li-item-mobile > input {
@@ -493,10 +494,6 @@ li {
 
   .list-item {
     padding: 0.5rem 0;
-  }
-
-  .input-li-item {
-    margin: 1rem 0;
   }
 
   .login-mobile {
