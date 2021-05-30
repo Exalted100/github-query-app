@@ -4,7 +4,7 @@ const form = document.querySelector("form")
 
 let user;
 
-const token = "/.netlify/functions/extinct"
+const token = "/.netlify/functions/serverless"
 
 const getUserData = async () => {
     try {
