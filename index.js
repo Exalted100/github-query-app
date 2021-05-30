@@ -6,14 +6,9 @@ let user;
 
 const token = "/.netlify/functions/serverless"
 
-const ready = async () => {
-    const res = await fetch(token)
-    const result = await res.json()
-    console.log(result)
-}
-
-/*const getUserData = async () => {
+const getUserData = async () => {
     try {
+        console.log(await fetch(token))
         const serverlessResult = await fetch(token)
         const res = await fetch('https://api.github.com/graphql', {
             method: 'POST',
@@ -51,16 +46,15 @@ const ready = async () => {
           const result = await res.json()
           window.localStorage.setItem('userData', JSON.stringify(result))
           console.log(JSON.parse(window.localStorage.getItem("userData")).errors)
-          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : console.log(await serverlessResult.json())
+          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
     } catch(err) {
         console.log(err)
     }
-    }*/
+    }
 
 const formSubmission = (event) => {
     event.preventDefault()
-    //getUserData()
-    ready()
+    getUserData()
 }
 
 const removeErrorMessage = () => {
@@ -69,5 +63,5 @@ const removeErrorMessage = () => {
 
 //Form Submission Handlers
 form.addEventListener("submit", formSubmission)
-submitButton.addEventListener("click", formSubmission)
+submitButton.addEventListener("click", getUserData)
 document.querySelector(".close-message").addEventListener("click", removeErrorMessage)
