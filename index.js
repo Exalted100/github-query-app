@@ -8,7 +8,7 @@ const token = "/.netlify/functions/serverless"
 
 const getUserData = async () => {
     try {
-        await fetch(token)
+        const serverlessResult = await fetch(token)
         const res = await fetch('https://api.github.com/graphql', {
             method: 'POST',
             headers: {
@@ -45,7 +45,7 @@ const getUserData = async () => {
           const result = await res.json()
           window.localStorage.setItem('userData', JSON.stringify(result))
           console.log(JSON.parse(window.localStorage.getItem("userData")).errors)
-          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : console.log(token)
+          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : console.log(serverlessResult)
     } catch(err) {
         console.log(err)
     }
