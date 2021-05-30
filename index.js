@@ -69,8 +69,7 @@ const token = "/.netlify/functions/serverless"
 
 const getToken = async () => {
     const res = await fetch(token)
-    const result = res.json()
-    console.log(result)
+    console.log(res)
 }
 
 const submitButton = document.querySelector("#submit-button")
