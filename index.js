@@ -6,7 +6,13 @@ let user;
 
 const token = "/.netlify/functions/serverless"
 
-const getUserData = async () => {
+const ready = async () => {
+    const res = await fetch(token)
+    const result = await res.json()
+    console.log(result)
+}
+
+/*const getUserData = async () => {
     try {
         const serverlessResult = await fetch(token)
         const res = await fetch('https://api.github.com/graphql', {
@@ -49,11 +55,12 @@ const getUserData = async () => {
     } catch(err) {
         console.log(err)
     }
-    }
+    }*/
 
 const formSubmission = (event) => {
     event.preventDefault()
-    getUserData()
+    //getUserData()
+    ready()
 }
 
 const removeErrorMessage = () => {
@@ -62,5 +69,5 @@ const removeErrorMessage = () => {
 
 //Form Submission Handlers
 form.addEventListener("submit", formSubmission)
-submitButton.addEventListener("click", getUserData)
+submitButton.addEventListener("click", formSubmission)
 document.querySelector(".close-message").addEventListener("click", removeErrorMessage)
