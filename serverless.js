@@ -1,3 +1,6 @@
-exports.handler = async (event, context) => {
-    return process.env.token
+  exports.handler = async (event, context) => {
+    return {
+      statusCode: 200,
+      body: process.env.token
+    };
   };
