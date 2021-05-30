@@ -1,5 +1,8 @@
 const { token } = process.env;
 
 exports.handler = async (event, context) => {
-  return token;
+  return {
+    statusCode: 200,
+    body: token,
+  };
 };
