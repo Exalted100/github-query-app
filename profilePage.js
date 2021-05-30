@@ -1,11 +1,19 @@
 document.querySelector(".main-menu-navigation-mobile").style.display = "none"
 
-const changeInputDisplay = () => {
+const focusInputDisplay = () => {
     document.querySelector(".input-li-item").style.backgroundColor = "white"
 }
 
-const changeMobileInputDisplay = () => {
+const focusMobileInputDisplay = () => {
     document.querySelector(".input-li-item-mobile").style.backgroundColor = "white"
+}
+
+const blurInputDisplay = () => {
+    document.querySelector(".input-li-item").style.backgroundColor = "#24292e"
+}
+
+const blurMobileInputDisplay = () => {
+    document.querySelector(".input-li-item-mobile").style.backgroundColor = "#24292e"
 }
 
 document.querySelector(`.profile-image-small`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
@@ -21,8 +29,10 @@ document.querySelector(`.user-login-mobile`).innerHTML = JSON.parse(window.local
 document.querySelector(`.user-bio-mobile`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.bio
 document.querySelector(`.number-of-repos`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.repositories.nodes.length
 document.querySelector(".number-of-repositories").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.repositories.nodes.length
-document.querySelector(".main-search").addEventListener("focus", changeInputDisplay)
-document.querySelector(".main-search-mobile").addEventListener("focus", changeMobileInputDisplay)
+document.querySelector(".main-search").addEventListener("focus", focusInputDisplay)
+document.querySelector(".main-search-mobile").addEventListener("focus", focusMobileInputDisplay)
+document.querySelector(".main-search").addEventListener("blur", blurInputDisplay)
+document.querySelector(".main-search-mobile").addEventListener("blur", blurMobileInputDisplay)
 
 const toggle = () => {
     document.querySelector(".main-menu-navigation-mobile").style.display = document.querySelector(".main-menu-navigation-mobile").style.display == "none" ? "block" : "none"
