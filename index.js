@@ -9,7 +9,7 @@ const tokenUrl = "/.netlify/functions/findToken"
 const getUserData = async () => {
     try {
         const token = await fetch(tokenUrl)
-        const parsedToken = await res.text()
+        const parsedToken = await token.text()
         const res = await fetch('https://api.github.com/graphql', {
             method: 'POST',
             headers: {
