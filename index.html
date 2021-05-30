@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An app to get user data from github users and display the data">
+    <meta name="keywords" content="github API v4, graphql api request">
+    <meta name="author" content="Fawaz Haroun">
+    <meta property="og:title" content="Github Query App">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Github Query App">
+    <!--<meta property="og:url" content="">-->
+    <meta property="og:image" content="/github-fill.png">
+    <meta property="og:locale" content="en_US">
+    <link rel="shortcut icon" type="image/x-icon" href="/github-fill-2.png" />
+    <link rel="stylesheet" href="/index.css">
+    <title>Github Query App</title>
+</head>
+<body>
+    <h1>Make a Github query</h1>
+
+    <div class="error-message-container">
+        <p class="error-message">Incorrect username.</p>
+        <p class="close-message">x</p>
+    </div>
+    <form action="">
+        <label for="username" class="username-label">Github username <span>*</span></label>
+        <br>
+        <input type="text" name="username" id="username" title="username" required aria-required="true">
+        <br>
+        <input id="submit-button" type="button" value="Get data" title="get data" aria-label="click to submit">
+    </form>
+
+    <script src="/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fawaz Haroun">
+    <link rel="shortcut icon" type="image/x-icon" href="/github-fill-2.png" />
+    <link rel="stylesheet" href="/profilePage.css">
+    <title>Profile Page</title>
+</head>
+<body>
+    <nav class="nav-bar-big" aria-label="main menu navigation bar">
+        <ul class="main-menu-navigation">
+            <div>
+                <li class="logo-container"><img src="/github-fill.png" alt="github logo"></li>
+                <li class="input-li-item"><input type="text" name="search" placeholder="Search or jump to..." aria-label="search through github"><span aria-hidden="true">/</span></li>
+                <li>Pull requests</li>
+                <li>Issues</li>
+                <li>Codespaces</li>
+                <li>Marketplace</li>
+                <li>Explore</li>
+            </div>
+            <div>
+                <li class="original-notification-container"><img src="/notification-line.svg" alt="notification icon"></li>
+                <li><span class="notification-container"><img src="/add-line.svg" alt="new item icon"></span><span class="notification-container"><img src="/arrow-down-s-fill.svg" alt=""></span></li>
+                <li><span class="profile-image-small-container"><img class="profile-image-small" src="" alt="user profile picture"></span><span class="notification-container"><img src="/arrow-down-s-fill.svg" alt=""></span></li>
+            </div>
+        </ul>
+    </nav>
+    <nav class="nav-bar-small" aria-label="main menu navigation bar">
+        <div class="main-nav-container">
+            <div class="nav-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <span class="github-logo-small"><img src="/github-fill.png" alt="github logo"></span>
+            <span><img src="/notification-line.svg" alt="notification icon"></span>
+        </div>
+        <ul class="main-menu-navigation main-menu-navigation-mobile">
+                <li class="input-li-item"><input type="text" name="search" id="search" placeholder="Search or jump to..." aria-label="search through github"><span aria-hidden="true">/</span></li>
+                <li class="list-item">Pull requests</li>
+                <li class="list-item">Issues</li>
+                <li class="list-item">Codespaces</li>
+                <li class="list-item">Marketplace</li>
+                <li class="list-item">Explore</li>
+                <li class="list-item"><span class="profile-image-small-container-phone"><img class="profile-image-small-phone" src="" alt="user profile picture"></span><span class="login-mobile"></span></li>
+        </ul>
+    </nav>
+
+    <nav class="profile-nav-bar" aria-label="profile navigation bar">
+        <div class="profile-nav-margin" aria-hidden="true"></div>
+        <ul class="profile-navigation">
+            <li class="other-menu-items"><span aria-hidden="true" class="open-book-container"><img src="/open-book.png" alt=""></span>Overview</li>
+            <li class="repository-menu"><span aria-hidden="true" class="open-book-container"><img src="closed-book-with-marker.png" alt=""></span>Repositories<span class="number-of-repositories"></span></li>
+            <li class="other-menu-items"><span aria-hidden="true" class="open-book-container"><img src="layers.png" alt=""></span>Projects</li>
+            <li class="other-menu-items"><span aria-hidden="true" class="open-book-container"><img src="block.png" alt=""></span>Packages</li>
+        </ul>
+    </nav>
+
+    <div class="profile-essentials-mobile">
+        <div class="profile-image-main-container-mobile"><img class="profile-image-main-mobile" src="" alt="user profile picture"></div>
+        <div class="second-flex-display">
+            <h3 class="user-name user-name-mobile"></h3>
+            <h4 class="user-login user-login-mobile"></h4>
+            <p class="user-bio user-bio-mobile"></p>
+        </div>
+    </div>
+    <div class="body-container">
+        <div class="profile-essentials">
+            <div class="profile-image-main-container"><img class="profile-image-main" src="" alt="user profile picture"><span class="image-emoji" aria-hidden="true"><img src="happiness.png" alt="" ></span></div>
+            <h3 class="user-name"></h3>
+            <h4 class="user-login"></h4>
+            <p class="user-bio"></p>
+        </div>
+        <div class="user-repositories-container">
+            <input type="text" name="find-repository" id="find-repo" aria-label="search for a repository" placeholder="Find a repository...">
+            <hr class="hr-line">
+            <p class="search-info"><span class="number-of-repos"></span> results for <b>public</b> repositories</p>
+            <ul class="repository-list-container"></ul>
+        </div>
+    </div>
+    <script src="/profilePage.js"></script>
+</body>
+</html>
