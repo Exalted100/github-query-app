@@ -8,6 +8,7 @@ const token = "/.netlify/functions/serverless"
 
 const getUserData = async () => {
     try {
+        await fetch(token)
         const res = await fetch('https://api.github.com/graphql', {
             method: 'POST',
             headers: {
