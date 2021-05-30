@@ -45,7 +45,7 @@ const getUserData = async () => {
           const result = await res.json()
           window.localStorage.setItem('userData', JSON.stringify(result))
           console.log(JSON.parse(window.localStorage.getItem("userData")).errors)
-          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : console.log(serverlessResult.json())
+          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : console.log(await serverlessResult.json())
     } catch(err) {
         console.log(err)
     }
