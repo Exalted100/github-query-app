@@ -1,20 +1,20 @@
-/*const usernameInputField = document.querySelector("#username")
+const usernameInputField = document.querySelector("#username")
 const submitButton = document.querySelector("#submit-button")
 const form = document.querySelector("form")
 
 let user;
 
-const token = "/.netlify/functions/serverless"
+const tokenUrl = "/.netlify/functions/findToken"
 
 const getUserData = async () => {
     try {
-        console.log(await fetch(token))
-        const serverlessResult = await fetch(token)
+        const token = await fetch(tokenUrl)
+        const parsedToken = await res.text()
         const res = await fetch('https://api.github.com/graphql', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              "Authorization": `bearer ${token}`
+              "Authorization": `bearer ${parsedToken}`
             },
             body: JSON.stringify({
               query: `
@@ -46,7 +46,7 @@ const getUserData = async () => {
           const result = await res.json()
           window.localStorage.setItem('userData', JSON.stringify(result))
           console.log(JSON.parse(window.localStorage.getItem("userData")).errors)
-          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : console.log("")
+          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
     } catch(err) {
         console.log(err)
     }
@@ -64,15 +64,4 @@ const removeErrorMessage = () => {
 //Form Submission Handlers
 form.addEventListener("submit", formSubmission)
 submitButton.addEventListener("click", getUserData)
-document.querySelector(".close-message").addEventListener("click", removeErrorMessage)*/
-const token = "/.netlify/functions/findToken"
-
-const getToken = async () => {
-    const res = await fetch(token)
-    console.log(res)
-    const result = await res.text()
-    console.log(result)
-}
-
-const submitButton = document.querySelector("#submit-button")
-submitButton.addEventListener("click", getToken)
+document.querySelector(".close-message").addEventListener("click", removeErrorMessage)
