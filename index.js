@@ -65,7 +65,7 @@ const removeErrorMessage = () => {
 form.addEventListener("submit", formSubmission)
 submitButton.addEventListener("click", getUserData)
 document.querySelector(".close-message").addEventListener("click", removeErrorMessage)*/
-const token = "/.netlify/functions/serverless"
+const token = "/.netlify/functions/findToken"
 
 const getToken = async () => {
     const res = await fetch(token)
