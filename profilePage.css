@@ -507,6 +507,18 @@ li {
   .user-name-mobile {
     margin-top: 0;
     font-size: 1.3rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+  }
+
+  .user-login-mobile {
+    color: rgb(156, 156, 156);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .user-bio-mobile {
+    width: 70%;
   }
 
   .second-flex-display {

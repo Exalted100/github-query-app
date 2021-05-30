@@ -1,4 +1,3 @@
-console.log(JSON.parse(window.localStorage.getItem("userData")))
 document.querySelector(".main-menu-navigation-mobile").style.display = "none"
 
 document.querySelector(`.profile-image-small`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)

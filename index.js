@@ -45,7 +45,6 @@ const getUserData = async () => {
           })
           const result = await res.json()
           window.localStorage.setItem('userData', JSON.stringify(result))
-          console.log(JSON.parse(window.localStorage.getItem("userData")).errors)
           JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
     } catch(err) {
         console.log(err)
