@@ -1,5 +1,3 @@
-document.querySelector(".main-menu-navigation-mobile").style.display = "none"
-
 const focusInputDisplay = () => {
     document.querySelector(".input-li-item").style.backgroundColor = "white"
 }
@@ -16,18 +14,19 @@ const blurMobileInputDisplay = () => {
     document.querySelector(".input-li-item-mobile").style.backgroundColor = "#24292e"
 }
 
-document.querySelector(`.profile-image-small`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
-document.querySelector(`.profile-image-small-phone`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
-document.querySelector(`.profile-image-main`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
-document.querySelector(`.profile-image-main-mobile`).setAttribute(`src`, `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
-document.querySelector(`.user-name`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.name
-document.querySelector(`.user-login`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.login
-document.querySelector(`.login-mobile`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.login
-document.querySelector(`.user-bio`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.bio
-document.querySelector(`.user-name-mobile`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.name
-document.querySelector(`.user-login-mobile`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.login
-document.querySelector(`.user-bio-mobile`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.bio
-document.querySelector(`.number-of-repos`).innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.repositories.nodes.length
+document.querySelector(".main-menu-navigation-mobile").style.display = "none"
+document.querySelector(".profile-image-small").setAttribute("src", `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
+document.querySelector(".profile-image-small-phone").setAttribute("src", `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
+document.querySelector(".profile-image-main").setAttribute("src", `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
+document.querySelector(".profile-image-main-mobile").setAttribute("src", `${JSON.parse(window.localStorage.getItem("userData")).data.user.avatarUrl}`)
+document.querySelector(".user-name").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.name
+document.querySelector(".user-login").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.login
+document.querySelector(".login-mobile").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.login
+document.querySelector(".user-bio").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.bio
+document.querySelector(".user-name-mobile").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.name
+document.querySelector(".user-login-mobile").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.login
+document.querySelector(".user-bio-mobile").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.bio
+document.querySelector(".number-of-repos").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.repositories.nodes.length
 document.querySelector(".number-of-repositories").innerHTML = JSON.parse(window.localStorage.getItem("userData")).data.user.repositories.nodes.length
 document.querySelector(".main-search").addEventListener("focus", focusInputDisplay)
 document.querySelector(".main-search-mobile").addEventListener("focus", focusMobileInputDisplay)
