@@ -358,7 +358,7 @@ li {
 }
 
 @media only screen and (min-width: 920px) {
-  .nav-bar-big {
+  .big-screen-nav-bar {
     display: block;
   }
 
@@ -390,7 +390,7 @@ li {
 }
 
 @media only screen and (max-width: 920px) {
-  .nav-bar-big {
+  .big-screen-nav-bar {
     display: none;
   }
 
