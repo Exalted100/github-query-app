@@ -50,12 +50,12 @@ const repositoryListRender = (item) => {
     const repositoryListItem = `<li class="project-container">
         <div class="mini-container">
         <h3 class="repo-name">${item.name}</h3>
-        <p class="star-paragraph"><span class="star-image-icon"><img src="./star-line.png" alt="" ></span>Star</p>
+        <p class="star-paragraph"><span class="star-image-icon"><img src="../images/star-line.png" alt="" ></span>Star</p>
         </div>
         <p class="repo-description">${item.description ? item.description : ""}</p>
         <p class="project-subitem"><span class="programming-language-colour" style="background-color: ${item.primaryLanguage ? item.primaryLanguage.color : ""};"></span><span class="repo-language">${item.primaryLanguage ? item.primaryLanguage.name : ""}</span></p>
-        <p class="project-subitem repo-num-of-stars"><span class="fork-icon-container"><img src="./github-fork.png" alt="" ></span>${item.stargazerCount}</p>
-        <p class="project-subitem repo-num-of-forks"><span class="star-icon-container"><img src="./star-line.png" alt="" ></span>${item.forkCount}</p>
+        <p class="project-subitem repo-num-of-stars"><span class="fork-icon-container"><img src="../images/github-fork.png" alt="" ></span>${item.stargazerCount}</p>
+        <p class="project-subitem repo-num-of-forks"><span class="star-icon-container"><img src="../images/star-line.png" alt="" ></span>${item.forkCount}</p>
         <p class="project-subitem repo-last-updated">Updated on ${dateUpdated[2][0] == 0 ? dateUpdated[2][1] : dateUpdated[2]} ${monthNames[parseInt(dateUpdated[1]) - 1]}${today.getFullYear() == dateUpdated[0] ? "" : `, ${dateUpdated[0] + ""}`}</p>
         </li>`
 
