@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 const { token } = process.env
 
-exports.handler = async () => {
+exports.handler = async (event, context) => {
       const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
@@ -11,7 +11,7 @@ exports.handler = async () => {
       body: JSON.stringify({
         query: `
         query {
-            user (login: "${usernameInputField.value}") {
+            user (login: "Exalted100") {
                 name
                 url
                 avatarUrl
@@ -38,6 +38,7 @@ exports.handler = async () => {
       const result = await res.json()
       return {
         statusCode: 200,
-        body: result
+        body: result,
+        event: event
       }
 }

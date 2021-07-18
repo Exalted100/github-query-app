@@ -5,8 +5,8 @@ const closeMessage = document.querySelector(".close-message")
 
 let user;
 
-const getUserData = async (event, context) => {
-    const res = await fetch("/.netlify/functions/findToken")
+const getUserData = async () => {
+    const res = await fetch("/.netlify/functions/findToken", {params: usernameInputField.value})
     const result = await res.json()
     console.log(result)
     window.localStorage.setItem("userData", JSON.stringify(result))
