@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 const { token } = process.env
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
       const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
