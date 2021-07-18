@@ -5,12 +5,51 @@ const closeMessage = document.querySelector(".close-message")
 
 let user;
 
+const tokenUrl = "/.netlify/functions/findToken"
+
 const getUserData = async () => {
-    const res = await fetch("/.netlify/functions/findToken", {body: usernameInputField.value})
-    const result = await res.json()
-    console.log(result)
-    window.localStorage.setItem("userData", JSON.stringify(result))
-    //JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
+    try {
+        const token = await fetch(tokenUrl)
+        const parsedToken = await token.text()
+        const res = await fetch("https://api.github.com/graphql", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `bearer ${parsedToken}`
+            },
+            body: JSON.stringify({
+              query: `
+              query {
+                  user (login: "${usernameInputField.value}") {
+                      name
+                      url
+                      avatarUrl
+                      bio
+                      login
+                          repositories (last: 20) {
+                                  nodes {
+                                      name
+                                      updatedAt
+                                      description
+                                      forkCount
+                                      url
+                                      stargazerCount
+                                      primaryLanguage {
+                                          name
+                                          color
+                                      }
+                                  }
+                          }
+                  }
+                }`
+            })
+          })
+          const result = await res.json()
+          window.localStorage.setItem("userData", JSON.stringify(result))
+          JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
+    } catch(err) {
+        console.log(err)
+    }
 }
 
 //Form Submission Handlers
