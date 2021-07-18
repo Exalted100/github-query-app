@@ -10,7 +10,7 @@ const getUserData = async (event, context) => {
     const result = await res.json()
     console.log(result)
     window.localStorage.setItem("userData", JSON.stringify(result))
-    JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
+    //JSON.parse(window.localStorage.getItem("userData")).errors ? document.querySelector(".error-message-container").style.display = "flex" : location.href = "/profilePage.html"
 }
 
 //Form Submission Handlers
